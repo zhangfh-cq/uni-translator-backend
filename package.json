@@ -1,0 +1,42 @@
+{
+  "name": "uni-translator-backend",
+  "version": "1.0.0",
+  "description": "uni-app translator backend.",
+  "main": "App.ts",
+  "scripts": {
+    "start": "ts-node ./src/App.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alsaces",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "joi": "^17.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-compose": "^4.1.0",
+    "koa-jwt": "^4.0.3",
+    "koa-router": "^10.1.1",
+    "log4js": "^6.3.0",
+    "moment": "^2.29.1",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.2",
+    "qs": "^6.10.2",
+    "sequelize": "^6.14.0"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/koa": "^2.13.4",
+    "@types/koa-bodyparser": "^4.3.5",
+    "@types/koa-compose": "^3.2.5",
+    "@types/koa-router": "^7.4.4",
+    "@types/log4js": "^2.3.5",
+    "@types/node": "^17.0.10",
+    "@types/nodemailer": "^6.4.4",
+    "@types/qs": "^6.9.7",
+    "@types/sequelize": "^4.28.11",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  }
+}
