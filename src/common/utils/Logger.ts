@@ -9,14 +9,14 @@ log4js.configure({
             type: 'console'
         },
         APPDateFile: {
-            type: 'DateFile',
+            type: 'dateFile',
             encoding: 'utf-8',
             pattern: 'yyyy-MM-dd.log',
             alwaysIncludePattern: true,
             filename: path.join(ROOT_DIR, 'logs/app/APP')
         },
         HTTPDateFile: {
-            type: 'DateFile',
+            type: 'dateFile',
             encoding: 'utf-8',
             pattern: 'yyyy-MM-dd.log',
             alwaysIncludePattern: true,
