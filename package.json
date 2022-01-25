@@ -31,7 +31,6 @@
     "@types/koa-bodyparser": "^4.3.5",
     "@types/koa-compose": "^3.2.5",
     "@types/koa-router": "^7.4.4",
-    "@types/log4js": "^2.3.5",
     "@types/node": "^17.0.10",
     "@types/nodemailer": "^6.4.4",
     "@types/qs": "^6.9.7",
