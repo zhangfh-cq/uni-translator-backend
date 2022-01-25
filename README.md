@@ -12,7 +12,7 @@ Github: [uni-translator-frontend](https://github.com/zhangfh-cq/uni-translator-f
 
 #### 预览
 
-![](https://cdn.jsdelivr.net/gh/zhangfh-cq/images@master/second-blog/15-1.jpg)
+![](https://cdn.jsdelivr.net/gh/zhangfh-cq/images@master/second-blog/16-1.png)
 
 #### 运行
 
