@@ -41,40 +41,34 @@ class TranslateService {
                 if (translation.length > 1000) {
                     throw new CustomError(RESPONSE.TRANSLATE_LENGTH_ERROR.CODE, RESPONSE.TRANSLATE_LENGTH_ERROR.MSG);
                 }
-                // 查找历史记录是否存在
-                const foundHistory = await HistoryModel.findOne({
-                    where: {
-                        origin_text: query,
-                        translation: translation
-                    }
+                // 添加历史记录
+                await HistoryModel.create({
+                    origin_text: query,
+                    translation: translation,
+                    user_id: userId
                 });
-                // 不存在则存入历史记录
-                if (!foundHistory) {
-                    await HistoryModel.create({
-                        origin_text: query,
-                        translation: translation,
-                        user_id: userId
-                    });
-                }
                 // 中英互译判断合法单词
                 if ((fromLang === 'zh' && toLang === 'en') || (fromLang === 'en' && toLang === 'zh')) {
+                    const word: string = (fromLang === 'zh' && toLang === 'en') ? translation : query;
+                    const zhTranslation: string = (fromLang === 'zh' && toLang === 'en') ? query : translation;
                     // 查找单词库
                     const foundWord = await EnWordModel.findOne({
                         where: {
-                            word: translation
+                            word: word
                         }
                     });
                     // 查找对应的生词
                     const foundNewWord = await NewWordModel.findOne({
                         where: {
-                            word: translation
+                            word: word,
+                            user_id: userId
                         }
                     });
                     // 如果单词合法且没有对应生词
                     if (foundWord && !foundNewWord) {
                         await NewWordModel.create({
-                            word: query,
-                            translation: translation,
+                            word: word,
+                            translation: zhTranslation,
                             user_id: userId
                         });
                     }
