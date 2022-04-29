@@ -4,7 +4,9 @@
   "description": "uni-app translator backend.",
   "main": "App.ts",
   "scripts": {
-    "start": "ts-node ./src/App.ts",
+    "dev": "ts-node ./src/App.ts",
+    "build": "tsc --project tsconfig.json",
+    "start": "node ./dist/App.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "alsaces",
